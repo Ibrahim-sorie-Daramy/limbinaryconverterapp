@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary Converter</title>
+    <link rel="shortcut icon" href="icon.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="#converter">Home</a>
+      <a href="#converter">Converter</a>
+      <a href="#instructions">Instructions</a>
+      <a href="#learn">Learn</a>
+    </div>
+
+    <div class="main-content">
+      <div class="container" id="converter">
+        <header>
+          <h1>Binary Converter</h1>
+          <p>
+            Welcome! Please enter a binary number and select the conversion
+            type.
+          </p>
+        </header>
+        <div class="left-image">
+          <img src="Limk.png" alt="Limkokwing Logo" />
+
+          <div class="icons" id="contact">
+            <a
+              href="https://www.facebook.com/p/Limkokwing-Sierra-Leone-100063778429058/"
+              title="Follow us on Facebook"
+            >
+              <i class="fa-brands fa-square-facebook"></i>
+            </a>
+            <a href="https://x.com/limkokwing_sl" title="Follow us on Twitter">
+              <i class="fa-brands fa-square-x-twitter"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/limkokwing/?trk=public_profile_experience-item_profile-section-card_image-click&originalSubdomain=za"
+              title="Follow us on LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/limkokwing/?hl=en"
+              title="Follow us on Instagram"
+            >
+              <i class="fa-brands fa-square-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <div class="content">
+          <label for="binaryInput">Enter Binary Number:</label>
+          <input type="text" id="binaryInput" placeholder="e.g. 1010" />
+
+          <label for="conversionType">Select Conversion Type:</label>
+          <select id="conversionType">
+            <option value="decimal">Decimal</option>
+            <option value="octal">Octal</option>
+            <option value="hexadecimal">Hexadecimal</option>
+          </select>
+
+          <button onclick="convertBinary()">Convert</button>
+          <button class="small-button" onclick="showSteps()">Show Steps</button>
+          <button class="small-button" onclick="clearResult()">Clear</button>
+
+          <div id="loading" class="loading">Loading...</div>
+
+          <h2>Result:</h2>
+          <div id="result"></div>
+        </div>
+      </div>
+    </div>
+    <div class="instructions" id="instructions">
+      <h2>About the Binary Converter</h2>
+      <p>
+        This <span class="highlight">Binary Converter</span> system is designed
+        to help you quickly convert binary numbers into Decimal, Octal, or
+        Hexadecimal formats. Whether you're a student learning about number
+        systems or a professional needing a quick conversion, this tool is here
+        to assist you.
+      </p>
+      <p>
+        Simply enter a binary number in the input field, select the desired
+        conversion type, and press the convert button. The result will be
+        displayed instantly.
+      </p>
+      <img
+        src="Screenshot 2024-06-11 204526.png"
+        alt="Binary Converter Diagram"
+      />
+    </div>
+
+    <div class="usage-guide">
+      <h2>Usage Guide</h2>
+      <ol>
+        <li>
+          <span class="highlight">Enter Binary Number:</span> Type the binary
+          number you want to convert in the input field labeled "Enter Binary
+          Number".
+        </li>
+        <li>
+          <span class="highlight">Select Conversion Type:</span> Choose the
+          conversion type (Decimal, Octal, or Hexadecimal) from the dropdown
+          menu.
+        </li>
+        <li>
+          <span class="highlight">Convert:</span> Click the "Convert" button to
+          see the conversion result instantly.
+        </li>
+        <li>
+          <span class="highlight">Show Steps:</span> Click the "Show Steps"
+          button to see the detailed steps taken to convert the binary number
+          into the selected format.
+        </li>
+        <li>
+          <span class="highlight">Clear:</span> Click the "Clear" button to
+          clear the input field and the result display.
+        </li>
+      </ol>
+    </div>
+
+    <div class="instructions" id="learn">
+      <h2>Binary</h2>
+      <p>
+        Binary number is a number expressed in the base 2 numeral system. Binary
+        number's digits have 2 symbols: zero (0) and one (1). Each digit of a
+        binary number counts a power of 2. Binary number example: 1101<sub
+          >2</sub
+        >
+        = 1×2<sup>3</sup> + 1×2<sup>2</sup> + 0×2<sup>1</sup> + 1×2<sup>0</sup>
+        = 13<sub>10</sub>
+      </p>
+
+      <h2>Decimal</h2>
+      <p>
+        Decimal number is a number expressed in the base 10 numeral system.
+        Decimal number's digits have 10 symbols: 0,1,2,3,4,5,6,7,8,9. Each digit
+        of a decimal number counts a power of 10.
+      </p>
+      <h2>How to convert binary to decimal</h2>
+      <p>For binary number with n digits:</p>
+      <p>dn-1 ... d3 d2 d1 d0</p>
+      <p>
+        The decimal number is equal to the sum of binary digits (dn) times their
+        power of 2 (2n):
+      </p>
+      <p>
+        decimal = d0×2<sup>0</sup> + d1×2<sup>1</sup> + d2×2<sup>2</sup> + ...
+      </p>
+      <h2>Binary to decimal conversion table</h2>
+      <table>
+        <tr>
+          <th>Binary Number</th>
+          <th>Decimal Number</th>
+          <th>Hex Number</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>3</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>100</td>
+          <td>4</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>101</td>
+          <td>5</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>110</td>
+          <td>6</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>111</td>
+          <td>7</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>1000</td>
+          <td>8</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>1001</td>
+          <td>9</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>1010</td>
+          <td>10</td>
+          <td>A</td>
+        </tr>
+        <tr>
+          <td>1011</td>
+          <td>11</td>
+          <td>B</td>
+        </tr>
+        <tr>
+          <td>1100</td>
+          <td>12</td>
+          <td>C</td>
+        </tr>
+        <tr>
+          <td>1101</td>
+          <td>13</td>
+          <td>D</td>
+        </tr>
+        <tr>
+          <td>1110</td>
+          <td>14</td>
+          <td>E</td>
+        </tr>
+        <tr>
+          <td>1111</td>
+          <td>15</td>
+          <td>F</td>
+        </tr>
+      </table>
+      <hr />
+      <h2>Hexadecimal</h2>
+      <p>
+        Hexadecimal number is a number expressed in the base 16 numeral system.
+        Hexadecimal number's digits have 16 symbols:
+        0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F. Each digit of a hexadecimal number
+        counts a power of 16. Hexadecimal number example: 62C<sub>16</sub> =
+        6×16<sup>2</sup> + 2×16<sup>1</sup> + 12×16<sup>0</sup> = 1580<sub
+          >10</sub
+        >
+      </p>
+      <h2>How to convert binary to hex</h2>
+      <p>
+        Convert every 4 binary digits (start from bit 0) to 1 hex digit, with
+        this table:
+      </p>
+      <table>
+        <tr>
+          <th>Binary</th>
+          <th>Hex</th>
+        </tr>
+        <tr>
+          <td>0000</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>0001</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>0010</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>0011</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>0100</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>0101</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>0110</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>0111</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>1000</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>1001</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>1010</td>
+          <td>A</td>
+        </tr>
+        <tr>
+          <td>1011</td>
+          <td>B</td>
+        </tr>
+        <tr>
+          <td>1100</td>
+          <td>C</td>
+        </tr>
+        <tr>
+          <td>1101</td>
+          <td>D</td>
+        </tr>
+        <tr>
+          <td>1110</td>
+          <td>E</td>
+        </tr>
+        <tr>
+          <td>1111</td>
+          <td>F</td>
+        </tr>
+      </table>
+      <hr />
+      <h2>Octal</h2>
+      <p>
+        A number system which has its base as ‘eight’ is called an Octal number
+        system. It uses numbers from 0 to 7. Let us take an example, to
+        understand the concept. As we said, any number with base 8 is an octal
+        number like 248, 1098, 558, etc.
+      </p>
+      <p>
+        Like Octal number is represented with base 8, in the same way, a binary
+        number is represented with base 2, a decimal number with base 10 and the
+        hexadecimal number is represented with base 16.
+      </p>
+      <h3>How to convert binary to octal</h3>
+      <p>
+        Convert every 3 binary digits (start from bit 0) to 1 octal digit, with
+        this table:
+      </p>
+      <table>
+        <tr>
+          <th>Binary</th>
+          <th>Octal</th>
+        </tr>
+        <tr>
+          <td>000</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>001</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>010</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>011</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>100</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>101</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>110</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>111</td>
+          <td>7</td>
+        </tr>
+      </table>
+    </div>
+
+    <footer class="footer">
+      <p>
+        &copy; 2024 Limkokwing University of Creative Technology Binary
+        Converter System
+      </p>
+      <p>Develop by <strong>Ibrahim Sorie Daramy</strong></p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></script>
+    <script src="js.js"></script>
+  </body>
+</html>
